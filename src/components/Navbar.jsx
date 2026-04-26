@@ -60,9 +60,9 @@ export default function Navbar() {
           <Image
             src="/images/logo.png"
             alt="HMT Control Room"
-            width={140}
-            height={40}
-            className="h-10 w-auto"
+            width={280}
+            height={88}
+            className="h-16 lg:h-20 w-auto"
             priority
           />
         </Link>
