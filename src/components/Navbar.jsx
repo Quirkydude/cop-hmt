@@ -3,10 +3,10 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Play, Users, FolderOpen, GraduationCap, Radio, ChevronDown } from 'lucide-react';
-import Logo from './Logo';
+import { Menu, X, Users, FolderOpen, GraduationCap, Radio } from 'lucide-react';
 
 const navigation = [
   { 
@@ -56,7 +56,16 @@ export default function Navbar() {
       <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-purple-600/5 to-blue-600/5 pointer-events-none" />
       
       <nav className="max-w-7xl mx-auto flex items-center justify-between p-4 lg:px-8 relative">
-        <Logo scrolled={scrolled} />
+        <Link href="/" className="relative z-10">
+          <Image
+            src="/images/logo.png"
+            alt="HMT Control Room"
+            width={140}
+            height={40}
+            className="h-10 w-auto"
+            priority
+          />
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-1">
