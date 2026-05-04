@@ -31,7 +31,7 @@ export default function Home() {
         >
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-purple-900/40 to-black/80 z-10" />
           <img
-            src="/api/placeholder/1920/1080"
+            src="/images/main_banner.jpg"
             alt="Media Team in Action"
             className="w-full h-full object-cover"
           />

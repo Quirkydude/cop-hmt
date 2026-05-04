@@ -11,7 +11,7 @@ const teamMembers = [
     id: 1,
     name: 'Clement Obeng',
     role: 'Media Head (Creative & Technical Lead)',
-    image: '/api/placeholder/400/500',
+    image: '/images/clement-obeng.jpg',
     department: 'Digital',
     icon: <Zap className="w-5 h-5" />,
     bio: "Clement leads the entire media team and handles end-to-end execution—photography, photo/video editing, graphic design, projection, setup, maintenance, and production oversight.",
@@ -43,13 +43,13 @@ const teamMembers = [
     id: 3,
     name: 'Richmond Boadi',
     role: 'Multimedia Specialist',
-    image: '/api/placeholder/400/500',
+    image: '/images/richmond-boadi.jpg',
     department: 'Photography & Production',
     icon: <Camera className="w-5 h-5" />,
     bio: 'Richmond is highly skilled in both photo and video editing, helping shape raw captures into polished visuals for services and media content.',
     skills: ['Photo Editing', 'Video Editing', 'Videography', 'Media Management', 'Live Lyrics'],
     social: { twitter: '#' },
-    featured: false,
+    featured: true,
   },
   {
     id: 4,
@@ -64,10 +64,22 @@ const teamMembers = [
     featured: true,
   },
   {
+    id: 5,
+    name: 'Prince QUarshie',
+    role: 'Graphic Designer',
+    image: '/images/prince-quarshie.jpg',
+    department: 'Design & Visuals',
+    icon: <Zap className="w-5 h-5" />,
+    bio: 'Prince is a highly skilled graphic designer who leads with clean, impactful visuals for church media and event communication.',
+    skills: ['Graphic Design', 'Brand Identity', 'Social Media Graphics', 'Print & Digital Design'],
+    social: { instagram: '#', linkedin: '#' },
+    featured: false,
+  },
+  {
     id: 6,
-    name: 'Samuel Adjei Gya',
+    name: 'Samuel Adjei Gyan',
     role: 'Designer',
-    image: '/api/placeholder/400/500',
+    image: '/images/samuel-adjei-gyan.jpg',
     department: 'Design & Visuals',
     icon: <Palette className="w-5 h-5" />,
     bio: 'Samuel is a creative designer who also assists with projection, helping ensure visuals are both well-designed and properly displayed during services.',
@@ -76,17 +88,29 @@ const teamMembers = [
     featured: false,
   },
   {
-    id: 5,
-    name: 'Prince QUarshie',
-    role: 'Graphic Designer',
-    image: '/api/placeholder/400/500',
-    department: 'Design & Visuals',
-    icon: <Zap className="w-5 h-5" />,
-    bio: 'Prince is a highly skilled graphic designer who leads with clean, impactful visuals for church media and event communication.',
-    skills: ['Graphic Design', 'Brand Identity', 'Social Media Graphics', 'Print & Digital Design'],
-    social: { instagram: '#', linkedin: '#' },
+    id: 7,
+    name: 'Emmanuel Avornyo Jr',
+    role: 'Projection & Design Assistant',
+    image: '/images/emmanuel-avornyo-jr.jpg',
+    department: 'IT & Editorial',
+    icon: <Palette className="w-5 h-5" />,
+    bio: 'Emmanuel is a projection specialist and designer who ensures seamless multimedia presentations during services, combining technical operation, visual design, and real-time troubleshooting to support worship experiences.',
+    skills: ['Graphic Design', 'Visual Branding', 'Projection Support', 'Layout Design'],
+    social: { instagram: '#', twitter: '#' },
     featured: false,
   },
+  {
+    id: 8,
+    name: 'Shadrack Odei Wontumi',
+    role: 'Projection & Design Support',
+    image: '/images/shadrack-odei-wontumi.jpg',
+    department: 'Photography & Production',
+    icon: <Palette className="w-5 h-5" />,
+    bio: 'Shadrack is a skilled projection and design specialist dedicated to delivering polished visual presentations. With expertise in both technical projection operation and creative design, he ensures seamless multimedia experiences during worship.',
+    skills: ['Projection Operation', 'Motion Graphics', 'Multimedia Design', 'Visual Compositing', 'Technical Support'],
+    social: { instagram: '#', twitter: '#' },
+    featured: false,
+  }
 ];
 
 const departments = ['All', 'IT & Editorial', 'Design & Visuals', 'Photography & Production'];
@@ -159,7 +183,11 @@ export default function Crew() {
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                    style={{
+                      // ensure images cover and stay centered for varied aspect ratios
+                      objectPosition: 'center center'
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent" />
                   
@@ -242,10 +270,11 @@ export default function Crew() {
                   {/* Image Side */}
                   <div className="relative h-64 md:h-full">
                     <img
-                      src={selectedMember.image}
-                      alt={selectedMember.name}
-                      className="w-full h-full object-cover"
-                    />
+                        src={selectedMember.image}
+                        alt={selectedMember.name}
+                        className="w-full h-full object-cover object-center"
+                        style={{ objectPosition: 'center center' }}
+                      />
                     <div className="absolute inset-0 bg-gradient-to-r from-gray-900/50 to-transparent md:bg-gradient-to-t md:from-gray-900/80" />
                   </div>
 
